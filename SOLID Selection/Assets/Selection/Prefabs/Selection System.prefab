@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8132980413308439410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5742546263276695946}
+  - component: {fileID: 3544803426477508768}
+  - component: {fileID: 3048479902266147443}
+  - component: {fileID: 8299965478449214189}
+  - component: {fileID: 9182209119113902415}
+  - component: {fileID: 6246649147541873004}
+  - component: {fileID: 2509089979531225502}
+  m_Layer: 0
+  m_Name: Selection System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5742546263276695946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8132980413308439410}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3544803426477508768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8132980413308439410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78dc64cbd0750f743a7bbb231674af2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SolidSelection.Runtime::SolidSelection.ViewportRayProvider
+  selectionCamera: {fileID: 0}
+--- !u!114 &3048479902266147443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8132980413308439410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87228352a373af46be9311f9db5a6c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SolidSelection.Runtime::SolidSelection.RaycastBasedSelector
+  settings: {fileID: 11400000, guid: a6943da4e636bc04296f38484ef96495, type: 2}
+--- !u!114 &8299965478449214189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8132980413308439410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8c6c6330f278bc4a845609fbc28afbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SolidSelection.Runtime::SolidSelection.DotProductBasedSelector
+  settings: {fileID: 11400000, guid: a6943da4e636bc04296f38484ef96495, type: 2}
+--- !u!114 &9182209119113902415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8132980413308439410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6fd12095cdda904abc554539bab8fc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SolidSelection.Runtime::SolidSelection.HighlightSelectionResponse
+  highlightMaterial: {fileID: 2100000, guid: 76191a502167024488da6dc320d2e35a, type: 2}
+--- !u!114 &6246649147541873004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8132980413308439410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75bdef6dc017ba9459ffde4c44522bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SolidSelection.Runtime::SolidSelection.OutlineSelectionResponse
+  outlineMaterial: {fileID: 2100000, guid: 22ba60423578a1c448f337a57f473b22, type: 2}
+  outlineColor: {r: 0.25, g: 1, b: 0.8, a: 1}
+  width: 0.045
+--- !u!114 &2509089979531225502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8132980413308439410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617fd17f039c4584da77955c18841ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SolidSelection.Runtime::SolidSelection.SelectionManager
+  rayProvider: {fileID: 3544803426477508768}
+  selector: {fileID: 8299965478449214189}
+  selectionResponse: {fileID: 6246649147541873004}

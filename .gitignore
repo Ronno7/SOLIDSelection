@@ -3,10 +3,13 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 .utmp/
+.reference/
+artifacts/
+**/Assets/Resources/PerformanceTestRun*.json
+**/Assets/Resources/PerformanceTestRun*.json.meta
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
-[Bb]uild/
 [Bb]uilds/
 [Ll]ogs/
 [Uu]ser[Ss]ettings/

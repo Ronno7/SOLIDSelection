@@ -1,0 +1,5 @@
+{
+  "name": "SolidSelection.Runtime",
+  "rootNamespace": "SolidSelection",
+  "references": ["Unity.InputSystem"]
+}

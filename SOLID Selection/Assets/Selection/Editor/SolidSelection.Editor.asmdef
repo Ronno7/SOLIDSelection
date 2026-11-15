@@ -1,0 +1,6 @@
+{
+  "name": "SolidSelection.Editor",
+  "rootNamespace": "SolidSelection.Editor",
+  "references": ["SolidSelection.Runtime"],
+  "includePlatforms": ["Editor"]
+}

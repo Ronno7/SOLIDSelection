@@ -1,0 +1,5 @@
+{
+  "name": "SolidSelection.PlayModeTests",
+  "references": ["SolidSelection.Runtime"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}
