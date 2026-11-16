@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 9182209119113902415}
   - component: {fileID: 6246649147541873004}
   - component: {fileID: 2509089979531225502}
+  - component: {fileID: 7535390138615800352}
+  - component: {fileID: 1905802392987885216}
   m_Layer: 0
   m_Name: Selection System
   m_TagString: Untagged
@@ -119,3 +121,33 @@ MonoBehaviour:
   rayProvider: {fileID: 3544803426477508768}
   selector: {fileID: 8299965478449214189}
   selectionResponse: {fileID: 6246649147541873004}
+--- !u!114 &7535390138615800352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8132980413308439410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9165072df1d574fb1190800277fd6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SolidSelection.Runtime::SolidSelection.SteadyAimSelector
+  candidateSelector: {fileID: 8299965478449214189}
+  holdSeconds: 0.6
+--- !u!114 &1905802392987885216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8132980413308439410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769dde6a05af6a44795e8b72ab678894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SolidSelection.Runtime::SolidSelection.SelectionResponseSwitcher
+  manager: {fileID: 2509089979531225502}
+  responses:
+  - {fileID: 9182209119113902415}
+  - {fileID: 6246649147541873004}

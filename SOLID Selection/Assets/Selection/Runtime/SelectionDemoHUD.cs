@@ -9,6 +9,7 @@ namespace SolidSelection
         public SelectionManager manager;
         public RaycastBasedSelector raycastSelector;
         public DotProductBasedSelector dotSelector;
+        public SteadyAimSelector steadyAimSelector;
         public HighlightSelectionResponse highlightResponse;
         public OutlineSelectionResponse outlineResponse;
         private GUIStyle label;
@@ -20,6 +21,7 @@ namespace SolidSelection
             var keys = Keyboard.current;
             if (keys.digit1Key.wasPressedThisFrame && raycastSelector != null) manager.SetSelector(raycastSelector);
             if (keys.digit2Key.wasPressedThisFrame && dotSelector != null) manager.SetSelector(dotSelector);
+            if (keys.digit3Key.wasPressedThisFrame && steadyAimSelector != null) manager.SetSelector(steadyAimSelector);
             if (keys.hKey.wasPressedThisFrame && highlightResponse != null) manager.SetResponse(highlightResponse);
             if (keys.oKey.wasPressedThisFrame && outlineResponse != null) manager.SetResponse(outlineResponse);
         }
@@ -39,10 +41,12 @@ namespace SolidSelection
             float w = Screen.width / scale;
             float h = Screen.height / scale;
             string selection = manager.SelectorComponent == dotSelector ? "Dot product" : "Raycast";
+            if (steadyAimSelector != null && manager.SelectorComponent == steadyAimSelector)
+                selection = $"Steady aim ({steadyAimSelector.Progress * 100f:0}%)";
             string display = manager.ResponseComponent == outlineResponse ? "Outline" : "Highlight";
             string selected = manager.Current != null ? manager.Current.name : "None";
-            DrawText(new Rect(12, 12, 500, 24), $"Selection: {selection}    (1: Raycast, 2: Dot product)", label);
-            DrawText(new Rect(12, 36, 500, 24), $"Display: {display}    (H: Highlight, O: Outline)", label);
+            DrawText(new Rect(12, 12, 760, 24), $"Selection: {selection}    (1: Raycast, 2: Dot product, 3: Steady aim)", label);
+            DrawText(new Rect(12, 36, 650, 24), $"Display: {display}    (E: next, H: Highlight, O: Outline)", label);
             DrawText(new Rect(12, 60, 500, 24), $"Selected: {selected}", label);
 
             DrawText(new Rect(w * 0.5f - 12, h * 0.5f - 12, 24, 24), "+", crosshair);

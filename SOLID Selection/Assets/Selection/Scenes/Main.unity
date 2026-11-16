@@ -2896,6 +2896,8 @@ GameObject:
   - component: {fileID: 585914109}
   - component: {fileID: 585914108}
   - component: {fileID: 585914112}
+  - component: {fileID: 585914115}
+  - component: {fileID: 585914116}
   m_Layer: 0
   m_Name: Selection System
   m_TagString: Untagged
@@ -3000,6 +3002,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &585914115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585914107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9165072df1d574fb1190800277fd6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SolidSelection.Runtime::SolidSelection.SteadyAimSelector
+  candidateSelector: {fileID: 585914110}
+  holdSeconds: 0.6
+--- !u!114 &585914116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585914107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769dde6a05af6a44795e8b72ab678894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SolidSelection.Runtime::SolidSelection.SelectionResponseSwitcher
+  manager: {fileID: 585914112}
+  responses:
+  - {fileID: 585914109}
+  - {fileID: 585914108}
 --- !u!1001 &586718275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3980,6 +4012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 697342331}
   - component: {fileID: 697342330}
+  - component: {fileID: 697342332}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -4067,6 +4100,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &697342332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697342329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!1001 &697492931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4997,6 +5059,7 @@ MonoBehaviour:
   manager: {fileID: 585914112}
   raycastSelector: {fileID: 585914111}
   dotSelector: {fileID: 585914110}
+  steadyAimSelector: {fileID: 585914115}
   highlightResponse: {fileID: 585914109}
   outlineResponse: {fileID: 585914108}
 --- !u!4 &870769498

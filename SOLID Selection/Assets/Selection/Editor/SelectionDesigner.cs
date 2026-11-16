@@ -37,6 +37,7 @@ namespace SolidSelection.Editor
             {
                 AssignButton<RaycastBasedSelector>(manager, "Raycast", "selector");
                 AssignButton<DotProductBasedSelector>(manager, "Dot product", "selector");
+                AssignButton<SteadyAimSelector>(manager, "Steady aim", "selector");
             }
             using (new EditorGUILayout.HorizontalScope())
             {
@@ -52,6 +53,18 @@ namespace SolidSelection.Editor
             var component = manager.GetComponent<T>();
             using (new EditorGUI.DisabledScope(component == null))
                 if (GUILayout.Button(text)) serializedObject.FindProperty(property).objectReferenceValue = component;
+        }
+    }
+
+    [CustomEditor(typeof(SelectionResponseSwitcher))]
+    public sealed class SelectionResponseSwitcherEditor : UnityEditor.Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            DrawDefaultInspector();
+            using (new EditorGUI.DisabledScope(!Application.isPlaying))
+                if (GUILayout.Button("Next response (E)"))
+                    ((SelectionResponseSwitcher)target).CycleNext();
         }
     }
 
